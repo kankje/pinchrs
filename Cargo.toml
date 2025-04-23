@@ -4,3 +4,22 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+image = "0.25.6"
+reqwest = { version = "0.12.15", default-features = false, features = ["rustls-tls"] }
+tokio = { version = "1.44.2", features = ["full"] }
+content_disposition = "0.4.0"
+axum = "0.8.3"
+tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
+mimalloc = "0.1.46"
+base64 = "0.22.1"
+hmac = "0.12.1"
+tracing = "0.1.41"
+sha2 = "0.10.8"
+tower-http = { version = "0.6.2", features = ["trace"] }
+dotenvy = "0.15.7"
+anyhow = "1.0.98"
+
+[profile.release]
+codegen-units = 1
+lto = "fat"
+panic = "abort"
